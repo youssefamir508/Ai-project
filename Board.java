@@ -1,4 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.game;
 
+/**
+ *
+ * @author lenovo
+ */
 
  import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +34,11 @@ public class Board {
     public void addWall(Walls wall) {
         placedWalls.add(wall);
     }
-
+    
+    public void removeWall(Walls wall) {
+        placedWalls.remove(wall);
+    }
+    
     public List<Walls> getPlacedWalls() {
         return placedWalls;
     }
@@ -38,6 +51,10 @@ public class Board {
         return players.get(id - 1);
     }
 
+    
+    //This method prevents collision - two players cannot stand on the same square.
+
+
   public boolean isSquareOccupied(Point pos) {
     
     for (Player p : this.players) {
@@ -49,5 +66,7 @@ public class Board {
     }
     return false; 
 }
+  
 
+  
 }
